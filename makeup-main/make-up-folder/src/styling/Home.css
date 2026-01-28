@@ -1,0 +1,170 @@
+
+/* Apply font-family globally */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    color: #3F3F3F;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll; /* enables scroll without showing bar */
+}
+
+
+.Home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Section */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    flex: 1 0 auto;
+    /*min-height: calc(100vh - 150px); /* 200px is footer height */
+}
+
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 20px;
+}
+
+.image-container {
+    width: 50%;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateX(-20px);
+    display: block;
+    animation: fade 0.6s ease forwards;
+    animation-delay: 0.1s;
+}
+
+.circle-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-image: url("../images/mama.jpg");
+    margin: 0 50px 20px auto;
+    background-size: contain;      /* Fit entire image inside */
+    background-repeat: no-repeat;  /* Prevent tiling */
+    background-position: center;   /* Center the image */
+}
+
+.text-container {
+    width: 45%;
+    padding: 20px;
+
+    opacity: 0;
+    display: inline-block;
+    transform: translateX(30px);
+    animation: fadeInRight 0.6s ease forwards;
+    animation-delay: 0.1s;
+}
+
+.text-container h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.profession {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #555;
+}
+
+button {
+    font-family: 'Poppins', serif;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 20px;
+    padding: 3px 24px;
+    border: 3px solid #7A6A62;
+    background: none ;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: #7A6A62; /* Normal text color */
+}
+
+/* Shine effect */
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            transparent,
+            #cdc2c0,
+            transparent
+    );
+    transform: skewX(-20deg);
+    animation: shine 8s infinite;
+    pointer-events: none;
+}
+
+button:hover::before {
+    animation: shine-hover 1s ease-in-out;
+}
+
+.home-menu .menu a:first-child {
+    position: relative;
+    display: inline-block;
+}
+
+.home-menu .menu a:first-child::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;         /* Adjust distance from text */
+    left: 50%;
+    width: 100%;          /* Full width under the link */
+    height: 1px;          /* Thin line */
+    background-color: #FFF6F3;
+    visibility: visible;  /* Always visible */
+    transition: none;     /* No animation */
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    15% {
+        left: 125%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
+
+@keyframes shine-hover {
+    0% {
+        left: -75%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 125%;
+        opacity: 0;
+    }
+}
