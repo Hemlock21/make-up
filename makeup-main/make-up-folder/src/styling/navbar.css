@@ -1,124 +1,37 @@
-footer {
-    flex-shrink: 0; /* footer stays at the bottom */
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;900&family=Poppins:wght@400;600;700&display=swap');
 
-/* Header Styles */
-header {
-    padding: 10px 20px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.logo span {
+/* Add these back to your CSS file */
+.logo-text {
     font-size: 24px;
     font-weight: 500;
     font-family: 'Cormorant Garamond', serif;
 }
 
-.logo strong{
+.logo-text strong {
     font-weight: 900;
 }
 
+/* Header Styles */
 .menu {
-    background-color: #CABFB8;
-    display: flex;
-    /* flex-wrap: wrap;  remove this if you want single line */
-    gap: 5px;
-    text-align: center;
-    overflow: hidden;
-
-    align-items: center;    /* <-- vertical centering */
-    justify-content: center; /* optional: center horizontally */
-
-    /* Initial animation state */
-    width: 42px;
-    height: 44px;           /* increase height to fit children */
-    padding: 0;
-    border-radius: 50%;
-
-    /* Run animation */
     animation: menuExpand 1s ease-in-out forwards;
 }
 
 .menu a {
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 0;
-    position: relative;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #FFF6F3;
-    white-space: nowrap;
-    flex-shrink: 0;
-
-    /* Initial animation state */
-    opacity: 0;
-    transform: translateY(40px); /* less than menu height */
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-.menu a:nth-child(3) {
-    animation-delay: 0.2s; /* Third link appears first */
-}
-
-.menu a:nth-child(2),
-.menu a:nth-child(4) {
-    animation-delay: 0.3s;
-}
-
-.menu a:nth-child(1),
-.menu a:nth-child(5) {
-    animation-delay: 0.6s;
-}
-
-.nav-text1 {
-    opacity: 0;
-    transform: translateX(-100px);
-    animation: fadeFromAngles 0.6s ease forwards;
-    display: inline-block;
-    animation-delay: 0.1s;
-}
-
-.nav-text2 {
-    opacity: 0;
-    display: inline-block;
-    transform: translateX(100px);
-    animation: fadeFromAngles 0.6s ease forwards;
-    animation-delay: 0.1s;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-}
-
-.menu a {
-    position: relative;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #FFF6F3;
-    white-space: nowrap;
-    flex-shrink: 0;
-
     opacity: 0;
     transform: translateY(40px);
     animation: fadeInUp 0.6s ease forwards;
+    font-weight: 400;
 }
 
-/* Underline effect */
+.menu a:nth-child(3) { animation-delay: 0.2s; }
+.menu a:nth-child(2), .menu a:nth-child(4) { animation-delay: 0.3s; }
+.menu a:nth-child(1), .menu a:nth-child(5) { animation-delay: 0.6s; }
+
 .menu a::after {
     content: "";
     position: absolute;
-    bottom: 2px; /* Controls how close the line is to the text */
+    bottom: 2px;
     left: 50%;
     transform: translateX(-50%);
     width: 0%;
@@ -128,21 +41,31 @@ header {
     transform-origin: center;
 }
 
-
 .menu a:hover::after,
-.menu a.active::after {
-    width: 100%;
+.menu a.active::after { width: 100%; }
+
+.nav-text1 {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: fadeFromAngles 0.6s ease forwards;
+    animation-delay: 0.1s;
+    display: inline-block;
 }
 
+.nav-text2 {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeFromAngles 0.6s ease forwards;
+    animation-delay: 0.1s;
+    display: inline-block;
+}
 
-/* Main Section */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 0;
     flex: 1 0 auto;
-    /*min-height: calc(100vh - 150px); /* 200px is footer height */
 }
 
 .container {
@@ -150,121 +73,34 @@ main {
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    margin: 0 auto; /* ✅ this centers it horizontally */
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     width: 100%;
 }
 
-/* Large screens */
 @media (min-width: 1400px) {
     .container {
         max-width: 1400px;
     }
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 10px; /* increased horizontal padding */
-        gap: 60px; /* ✅ Adds gap between flex children */
-    }
 }
 
-/* Medium desktops */
 @media (max-width: 1200px) {
-    .container {
-        padding: 0 40px;
-    }
+    .container { padding: 0 40px; }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-        margin: 0 10px;
-    }
+    .container { padding: 0 20px; margin: 0 10px; }
 }
 
-/* Small screens or phones */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 10px;
-        margin: 0 5px;
-    }
+    .container { padding: 0 10px; margin: 0 5px; }
 }
 
-
-.contact-info {
-    display: flex;
-    justify-content: space-between; /* spread left and right */
-    width: 100%;
-    padding: 15px 100px 10px;
-    box-sizing: border-box;
-    background: #7A6A62;
-    color: #CFC4BD;
-    flex-wrap: wrap;
-}
-
-.contact-container {
-    display: flex;
-    gap: 40px; /* spacing between columns */
-    flex: 1; /* Let it grow naturally */
-}
-
-.contact-info-item h1 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.contact-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.contact-container-logo {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 400px; /* or however wide you want this section */
-}
-
-.copyright{
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 0 0 0;
-    font-size: 16px;
-    z-index: 9999;
-}
-
-
-.contact-container-logo h1 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.contact-container-logo p {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-.light-text {
-    font-weight: 300; /* or lighter */
-}
-
-footer .contact-info .contact-info-item h1{
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-}
 
 @keyframes menuExpand {
     to {
-        width: 500px;            /* Adjust based on real size */
+        width: 500px;
         height: 20px;
         padding: 12px 40px;
         border-radius: 999px;
@@ -273,29 +109,17 @@ footer .contact-info .contact-info-item h1{
 }
 
 @keyframes fade {
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
+    to { opacity: 1; transform: translateX(0px); }
 }
 
 @keyframes fadeFromAngles {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    to { opacity: 1; transform: translateX(0); }
 }
