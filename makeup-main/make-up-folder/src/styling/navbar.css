@@ -15,6 +15,7 @@
 /* Header Styles */
 .menu {
     animation: menuExpand 1s ease-in-out forwards;
+    overflow: visible;
 }
 
 .menu a {
@@ -105,6 +106,7 @@ main {
         padding: 12px 40px;
         border-radius: 999px;
         text-align: center;
+        overflow: visible;
     }
 }
 
@@ -122,4 +124,16 @@ main {
 
 @keyframes fadeInRight {
     to { opacity: 1; transform: translateX(0); }
+}
+
+.dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding-top: 8px;
+}
+
+.dropdown.visible {
+    opacity: 1;
+    visibility: visible;
 }

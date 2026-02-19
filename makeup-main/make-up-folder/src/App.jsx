@@ -3,6 +3,8 @@ import Home from './components/Home.jsx';
 import ContactUs from './components/ContactUs.jsx';
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import FullService from './components/FullService.jsx'
+import Courses from './components/Courses.jsx'
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/contact-us" element={<ContactUs />} />
+                        <Route path="/services/full-service" element={<FullService />} />
+                        <Route path="/services/courses" element={<Courses />} />
                     </Routes>
                 </div>
                 <Footer />

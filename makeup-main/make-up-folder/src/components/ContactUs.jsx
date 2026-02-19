@@ -10,9 +10,9 @@ function ContactUs() {
 <div className="flex flex-col">
     <strong style={{ fontSize: '48px', fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, marginBottom: '10px' }}>LOCATION</strong>
     <div style={{ minHeight: '80px' }}>
-        <div style={{ marginBottom: '4px' }}>item</div>
-        <div style={{ marginBottom: '4px' }}>item</div>
-        <div style={{ marginBottom: '4px' }}>item</div>
+        <div style={{ marginBottom: '8px', fontWeight: 350 }}>ProMakeup  @ Kim & Rose</div>
+        <div style={{ marginBottom: '8px', fontWeight: 350 }}>Triq Tal - Katidral 62</div>
+        <div style={{ marginBottom: '8px', fontWeight: 350 }}>+356 7952 1909</div>
     </div>
     <div style={{ width: '450px', height: '450px', overflow: 'hidden' }}>
                                     <iframe
@@ -30,9 +30,9 @@ function ContactUs() {
 
 {/* Get In Touch */}
 <div className="flex flex-col">
-    <strong style={{ fontSize: '48px', fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, marginBottom: '10px', display: 'block' }}>GET IN TOUCH</strong>
-    <div style={{ minHeight: '80px' }}>
-        <div>Professional make up artist</div>
+    <strong style={{ fontSize: '48px', fontFamily: 'Cormorant Garamond, serif', fontWeight: 700, marginBottom: '10px', display: 'block', textDecorationLine: 'underline', textUnderlineOffset: '2px', textDecorationThickness: '2px' }}>GET IN TOUCH</strong>
+    <div style={{ minHeight: '92px' }}>
+        <div style={{ fontSize: '18px', fontWeight: 350 }}>Professional make up artist</div>
     </div>
     <div className="flex flex-col" style={{ gap: '8px' }}>
         <div className="flex flex-row" style={{ gap: '8px' }}>
