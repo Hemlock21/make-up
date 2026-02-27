@@ -1,5 +1,3 @@
-
-
 function ContactUs() {
     return (
         <div className="ContactUs">

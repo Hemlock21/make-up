@@ -4,7 +4,7 @@ import { MdEmail } from 'react-icons/md'
 const Footer = () => {
     return (
         <footer className="shrink-0 w-full bg-[#7A6A62] text-[#CFC4BD]">
-            <div className="max-w-[1200px] mx-auto px-10 py-4 flex justify-between items-start">
+            <div className="max-w-[80vw] mx-auto px-10 py-4 flex justify-between items-start">
                 <div className="flex gap-[80px]">
  <div>
     <h1 style={{ margin: '0', paddingTop: '10px' }} className="text-2xl font-['Cormorant_Garamond',serif]">Contact Us</h1>
